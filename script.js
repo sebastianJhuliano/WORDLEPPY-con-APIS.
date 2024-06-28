@@ -16,7 +16,7 @@ fetch("https://random-word.ryanrk.com/api/en/word/random/?length=5")
         palabra = response[0].toUpperCase();
     })
     .catch(err => {
-        console.log("uns sucedio un error")
+        console.log("uns sucedio un error");
         let listaPalabras = ["TIGER","BEACH","APPLE","MOUSE","HOUSE","WORLD"];
         let indice = Math.floor(Math.random()*listaPalabras.length);
         let palabra = listaPalabras[indice];
