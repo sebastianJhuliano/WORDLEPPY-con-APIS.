@@ -1,5 +1,5 @@
 
-let intentos = 6;
+
 //let palabra = "APPLE";
 
 /*let listaPalabras = ["TIGER","BEACH","APPLE","MOUSE","HOUSE","WORLD"];
@@ -9,6 +9,8 @@ let palabra = listaPalabras[indice];
 
 console.log(palabra);*/
 let palabra;
+let intentos = 6;
+
 fetch("https://random-word.ryanrk.com/api/en/word/random/?length=5")
     .then(response => response.json())
     .then(response => {
@@ -23,6 +25,11 @@ fetch("https://random-word.ryanrk.com/api/en/word/random/?length=5")
 
     })
 console.log(palabra);
+
+const reloadButton = document.getElementById("recarga");
+reloadButton.addEventListener("click", function() {
+    location.reload();
+});
 
 
 console.log(palabra);
@@ -44,7 +51,7 @@ function intentar(){
         return 
     }
 
-    intentos= intentos -1;
+    intentos--;
     console.log("te quedan "+ intentos +"intentos");
 
     const GRID = document.getElementById("grid");
@@ -75,10 +82,12 @@ function intentar(){
         terminar("<h1>GANASTE!😎</h1>");
         return
     }
-     if (intentos==0){
+     if (intentos==0){ 
             terminar("<h1>PERDISTE!😖</h1>");
         }
 }
+
+
 
     function terminar(mensaje){ 
         const INPUT = document.getElementById("guess-input");
